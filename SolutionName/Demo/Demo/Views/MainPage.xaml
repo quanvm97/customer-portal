@@ -53,11 +53,15 @@
                                   BorderWidth="1"
                                   StrokeColor="DimGray"
                                   Image="ic_reload"
-                                  ImageHeight="12"
-                                  ImageWidth="12"
                                   ImageAlignment="Right"
                                   Opacity="0.8"
                                   InputTransparent="True">
+                <controls:CustomEntry.ImageHeight>
+                    <OnPlatform Android="14" iOS="12" />
+                </controls:CustomEntry.ImageHeight>
+                <controls:CustomEntry.ImageWidth>
+                    <OnPlatform Android="14" iOS="12" />
+                </controls:CustomEntry.ImageWidth>
             </controls:CustomEntry>
             <BoxView Grid.Column="2"
                      Color="Transparent"

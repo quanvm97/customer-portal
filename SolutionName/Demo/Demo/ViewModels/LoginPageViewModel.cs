@@ -65,6 +65,7 @@ namespace Demo.ViewModels
                     {
                         // Show username and password is incorrect
                         await MessagePopup.Instance.Show("Username and password is incorrect!");
+                        return;
                     }
 
                     // Store to database
