@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:PopupBasePage xmlns:base="clr-namespace:Demo.Views.Base"
+                    xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:controls="clr-namespace:Demo.Controls"
+                    x:Class="Demo.Views.Popups.MessagePopup">
+    <pages:PopupPage.Animation>
+        <base:PopupFadeAnimation />
+    </pages:PopupPage.Animation>
+
+    <Grid VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand"
+          BackgroundColor="#aa7a7c80">
+        <Frame BackgroundColor="White"
+               Padding="0"
+               Margin="50,20"
+               CornerRadius="8"
+               HasShadow="True"
+               VerticalOptions="CenterAndExpand">
+            <StackLayout Spacing="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="LabelMessageTitle"
+                           Grid.Row="0"
+                           Text="Message"
+                           TextColor="{StaticResource GrayColor}"
+                           FontSize="{DynamicResource SuperLargeLabelFont}"
+                           HorizontalOptions="Center"
+                           Margin="20,15,32,0"
+                           Padding="10,0"
+                           FontAttributes="Bold"/>
+
+                    <ScrollView Grid.Row="1">
+                        <Label x:Name="LabelMessageContent"
+                               Margin="20,10"
+                               TextColor="{StaticResource GrayColor}"
+                               HorizontalOptions="CenterAndExpand"/>
+                    </ScrollView>
+
+                    <StackLayout Grid.Row="2"
+                                 Spacing="0">
+                        <BoxView BackgroundColor="#d0d0d0"
+                                 HeightRequest="0.5"/>
+                        <controls:CustomButton x:Name="ButtonMessageClose"
+                                               Text="Ok"
+                                               IsBorderless="True"
+                                               Upper="True"
+                                               VerticalOptions="CenterAndExpand"
+                                               HorizontalOptions="CenterAndExpand"
+                                               TextColor="#1d3e84"
+                                               Clicked="ClosedPopupEvent"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="DoNothingEvent" />
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="ClosedPopupEvent" />
+        </Grid.GestureRecognizers>
+    </Grid>
+</base:PopupBasePage>

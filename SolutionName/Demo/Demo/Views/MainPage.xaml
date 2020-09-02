@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:PageBase  xmlns:base="clr-namespace:Demo.Views.Base"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:controls="clr-namespace:Demo.Controls"
+                x:Class="Demo.Views.MainPage"
+                Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="FillAndExpand" 
+                 VerticalOptions="FillAndExpand"
+                 Padding="0"
+                 Spacing="0">
+        <Grid Padding="10,5"
+              BackgroundColor="#DCDCDC">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ImageButton x:Name="btnBack"
+                         Source="ic_back"
+                         Grid.Column="0"
+                         BackgroundColor="Transparent"
+                         Opacity="0.5"
+                         Clicked="OnBackButtonClicked">
+                <ImageButton.WidthRequest>
+                    <OnPlatform Android="20" iOS="18" />
+                </ImageButton.WidthRequest>
+
+                <ImageButton.HeightRequest>
+                    <OnPlatform Android="20" iOS="18" />
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <ImageButton x:Name="btnForward"
+                         Source="ic_forward"
+                         Grid.Column="1"
+                         BackgroundColor="Transparent"
+                         Opacity="0.5"
+                         Clicked="OnForwardButtonClicked">
+                <ImageButton.WidthRequest>
+                    <OnPlatform Android="20" iOS="18" />
+                </ImageButton.WidthRequest>
+
+                <ImageButton.HeightRequest>
+                    <OnPlatform Android="20" iOS="18" />
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <controls:CustomEntry Grid.Column="2"
+                                  x:Name="enUrl"
+                                  Text="https://myportal.grove-dean-insurance.co.uk"
+                                  HasRoundedCorner="True"
+                                  ConnerBorder="10"
+                                  BorderWidth="1"
+                                  StrokeColor="DimGray"
+                                  Image="ic_reload"
+                                  ImageHeight="8"
+                                  ImageWidth="8"
+                                  ImageAlignment="Right"
+                                  Opacity="0.8"
+                                  InputTransparent="True">
+                <controls:CustomEntry.ImageHeight>
+                    <OnPlatform Android="8" iOS="12" />
+                </controls:CustomEntry.ImageHeight>
+                <controls:CustomEntry.ImageWidth>
+                    <OnPlatform Android="8" iOS="12" />
+                </controls:CustomEntry.ImageWidth>
+            </controls:CustomEntry>
+            <BoxView Grid.Column="2"
+                     Color="Transparent"
+                     HorizontalOptions="End"
+                     VerticalOptions="FillAndExpand"
+                     WidthRequest="30"
+                     HeightRequest="{Binding Source={x:Reference enUrl},Path=Height}">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnReloadButtonClicked"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+        </Grid>
+
+        <ProgressBar Progress="0.2"
+                     HorizontalOptions="FillAndExpand"
+                     x:Name="progress"
+                     ProgressColor="DimGray"
+                     BackgroundColor="Transparent">
+            <ProgressBar.Margin>
+                <OnPlatform Android="0,-5" iOS="0" />
+            </ProgressBar.Margin>
+        </ProgressBar>
+
+        <WebView x:Name="webView"
+                     Source="https://myportal.grove-dean-insurance.co.uk" 
+                     VerticalOptions="FillAndExpand"
+                     Navigated="webviewNavigated" 
+                     Navigating="webviewNavigating" />
+    </StackLayout>
+
+</base:PageBase>

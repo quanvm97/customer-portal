@@ -1,0 +1,12 @@
+E:\MyRepository\SolutionName\SolutionName\SolutionName\bin\Debug\netstandard2.0\SolutionName.deps.json
+E:\MyRepository\SolutionName\SolutionName\SolutionName\bin\Debug\netstandard2.0\SolutionName.dll
+E:\MyRepository\SolutionName\SolutionName\SolutionName\obj\Debug\netstandard2.0\SolutionName.csprojAssemblyReference.cache
+E:\MyRepository\SolutionName\SolutionName\SolutionName\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\MyRepository\SolutionName\SolutionName\SolutionName\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+E:\MyRepository\SolutionName\SolutionName\SolutionName\obj\Debug\netstandard2.0\SolutionName.AssemblyInfoInputs.cache
+E:\MyRepository\SolutionName\SolutionName\SolutionName\obj\Debug\netstandard2.0\SolutionName.AssemblyInfo.cs
+E:\MyRepository\SolutionName\SolutionName\SolutionName\bin\Debug\netstandard2.0\SolutionName.pdb
+E:\MyRepository\SolutionName\SolutionName\SolutionName\obj\Debug\netstandard2.0\SolutionName.csproj.CoreCompileInputs.cache
+E:\MyRepository\SolutionName\SolutionName\SolutionName\obj\Debug\netstandard2.0\XamlC.stamp
+E:\MyRepository\SolutionName\SolutionName\SolutionName\obj\Debug\netstandard2.0\SolutionName.dll
+E:\MyRepository\SolutionName\SolutionName\SolutionName\obj\Debug\netstandard2.0\SolutionName.pdb
