@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
                         <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
                     </layoutGuides>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1156" key="view" highlightedImage="Default-Portrait.png" image="Default-Portrait.png">
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1156" key="view" highlightedImage="logo.png" image="logo.png">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
@@ -29,6 +29,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Default-Portrait.png" width="768" height="1004"/>
+        <image name="logo.png" width="283" height="67"/>
     </resources>
 </document>
