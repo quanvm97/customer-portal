@@ -1,1 +1,8 @@
 /SolutionName/.vs
+/SolutionName/Demo/Demo/obj
+/SolutionName/Demo/Demo/bin
+/SolutionName/Demo/Demo.Android/Demo.Android.csproj.user
+/SolutionName/Demo/Demo.Android/bin
+/SolutionName/Demo/Demo.Android/obj
+/SolutionName/Demo/Demo.iOS/obj
+/SolutionName/Demo/Demo.iOS/bin
