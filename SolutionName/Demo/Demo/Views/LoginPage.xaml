@@ -51,6 +51,15 @@
                                           HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
+                <Label Text="Forgot password?"
+                       HorizontalOptions="CenterAndExpand"
+                       TextDecorations="Underline"
+                       Padding="10">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
                 <controls:CustomButton Text="Login"
                                        BackgroundColor="#0079ae"
                                        TextColor="White"

@@ -20,6 +20,7 @@ namespace Demo.ViewModels
             : base(navigationService: navigationService, sqliteService: sqLiteService)
         {
             LoginCommand = new DelegateCommand(LoginExecute);
+            ForgotPasswordCommand = new DelegateCommand(ForgotPasswordExecute);
         }
 
         #endregion
@@ -81,6 +82,19 @@ namespace Demo.ViewModels
                     });
                 });
 
+            });
+        }
+
+        #endregion
+
+        #region ForgotPasswordCommand
+
+        public ICommand ForgotPasswordCommand { get; set; }
+        private async void ForgotPasswordExecute()
+        {
+            await CheckBusy(async () =>
+            {
+                await MessagePopup.Instance.Show(message: "Comming soon!");
             });
         }
 
