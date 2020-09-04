@@ -6,89 +6,128 @@
                 x:Class="Demo.Views.MainPage"
                 Title="{Binding Title}">
 
-    <StackLayout HorizontalOptions="FillAndExpand" 
-                 VerticalOptions="FillAndExpand"
-                 Padding="0"
-                 Spacing="0">
-        <Grid Padding="10,5"
-              BackgroundColor="#DCDCDC">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <ImageButton x:Name="btnBack"
-                         Source="ic_back"
-                         Grid.Column="0"
-                         BackgroundColor="Transparent"
-                         Opacity="0.5"
-                         Clicked="OnBackButtonClicked">
-                <ImageButton.WidthRequest>
-                    <OnPlatform Android="20" iOS="18" />
-                </ImageButton.WidthRequest>
-
-                <ImageButton.HeightRequest>
-                    <OnPlatform Android="20" iOS="18" />
-                </ImageButton.HeightRequest>
-            </ImageButton>
-            <ImageButton x:Name="btnForward"
-                         Source="ic_forward"
-                         Grid.Column="1"
-                         BackgroundColor="Transparent"
-                         Opacity="0.5"
-                         Clicked="OnForwardButtonClicked">
-                <ImageButton.WidthRequest>
-                    <OnPlatform Android="20" iOS="18" />
-                </ImageButton.WidthRequest>
-
-                <ImageButton.HeightRequest>
-                    <OnPlatform Android="20" iOS="18" />
-                </ImageButton.HeightRequest>
-            </ImageButton>
-            <controls:CustomEntry Grid.Column="2"
-                                  x:Name="enUrl"
-                                  Text="https://myportal.grove-dean-insurance.co.uk"
-                                  HasRoundedCorner="True"
-                                  ConnerBorder="10"
-                                  BorderWidth="1"
-                                  StrokeColor="DimGray"
-                                  ImageAlignment="Right"
-                                  Opacity="0.8"
-                                  InputTransparent="True">
-                <controls:CustomEntry.ImageHeight>
-                    <OnPlatform Android="14" iOS="12" />
-                </controls:CustomEntry.ImageHeight>
-                <controls:CustomEntry.ImageWidth>
-                    <OnPlatform Android="14" iOS="12" />
-                </controls:CustomEntry.ImageWidth>
-            </controls:CustomEntry>
-            <BoxView Grid.Column="2"
-                     Color="Transparent"
-                     HorizontalOptions="End"
+    <Grid>
+        <StackLayout HorizontalOptions="FillAndExpand" 
                      VerticalOptions="FillAndExpand"
-                     WidthRequest="30"
-                     HeightRequest="{Binding Source={x:Reference enUrl},Path=Height}">
-                <BoxView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnReloadButtonClicked"/>
-                </BoxView.GestureRecognizers>
-            </BoxView>
-        </Grid>
+                     Padding="0"
+                     Spacing="0">
+            <Grid Padding="10,5"
+                  BackgroundColor="#DCDCDC">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton x:Name="btnBack"
+                             Source="ic_back"
+                             Grid.Column="0"
+                             BackgroundColor="Transparent"
+                             Opacity="0.5"
+                             Clicked="OnBackButtonClicked">
+                    <ImageButton.WidthRequest>
+                        <OnPlatform Android="20" iOS="18" />
+                    </ImageButton.WidthRequest>
 
-        <ProgressBar Progress="0.2"
-                     HorizontalOptions="FillAndExpand"
-                     x:Name="progress"
-                     ProgressColor="DimGray"
-                     BackgroundColor="Transparent">
-            <ProgressBar.Margin>
-                <OnPlatform Android="0,-5" iOS="0" />
-            </ProgressBar.Margin>
-        </ProgressBar>
+                    <ImageButton.HeightRequest>
+                        <OnPlatform Android="20" iOS="18" />
+                    </ImageButton.HeightRequest>
+                </ImageButton>
+                <ImageButton x:Name="btnForward"
+                             Source="ic_forward"
+                             Grid.Column="1"
+                             BackgroundColor="Transparent"
+                             Opacity="0.5"
+                             Clicked="OnForwardButtonClicked">
+                    <ImageButton.WidthRequest>
+                        <OnPlatform Android="20" iOS="18" />
+                    </ImageButton.WidthRequest>
 
-        <WebView x:Name="webView"
-                     Source="https://myportal.grove-dean-insurance.co.uk" 
-                     VerticalOptions="FillAndExpand"
-                     Navigated="webviewNavigated" 
-                     Navigating="webviewNavigating" />
-    </StackLayout>
+                    <ImageButton.HeightRequest>
+                        <OnPlatform Android="20" iOS="18" />
+                    </ImageButton.HeightRequest>
+                </ImageButton>
+                <controls:CustomEntry Grid.Column="2"
+                                      x:Name="enUrl"
+                                      Text="https://myportal.grove-dean-insurance.co.uk"
+                                      HasRoundedCorner="True"
+                                      ConnerBorder="10"
+                                      BorderWidth="1"
+                                      StrokeColor="DimGray"
+                                      ImageAlignment="Right"
+                                      Opacity="0.8"
+                                      InputTransparent="True">
+                    <controls:CustomEntry.ImageHeight>
+                        <OnPlatform Android="14" iOS="12" />
+                    </controls:CustomEntry.ImageHeight>
+                    <controls:CustomEntry.ImageWidth>
+                        <OnPlatform Android="14" iOS="12" />
+                    </controls:CustomEntry.ImageWidth>
+                </controls:CustomEntry>
+                <BoxView Grid.Column="2"
+                         Color="Transparent"
+                         HorizontalOptions="End"
+                         VerticalOptions="FillAndExpand"
+                         WidthRequest="30"
+                         HeightRequest="{Binding Source={x:Reference enUrl},Path=Height}">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnReloadButtonClicked"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <ImageButton x:Name="btnSettings"
+                             Source="ic_settings"
+                             Grid.Column="3"
+                             BackgroundColor="Transparent"
+                             Opacity="0.5"
+                             Rotation="90"
+                             Clicked="OnMenuItemClicked">
+                    <ImageButton.WidthRequest>
+                        <OnPlatform Android="20" iOS="18" />
+                    </ImageButton.WidthRequest>
+
+                    <ImageButton.HeightRequest>
+                        <OnPlatform Android="20" iOS="18" />
+                    </ImageButton.HeightRequest>
+                </ImageButton>
+            </Grid>
+
+            <ProgressBar Progress="0.2"
+                         HorizontalOptions="FillAndExpand"
+                         x:Name="progress"
+                         ProgressColor="DimGray"
+                         BackgroundColor="Transparent">
+                <ProgressBar.Margin>
+                    <OnPlatform Android="0,-5" iOS="0" />
+                </ProgressBar.Margin>
+            </ProgressBar>
+
+            <WebView x:Name="webView"
+                         Source="https://myportal.grove-dean-insurance.co.uk" 
+                         VerticalOptions="FillAndExpand"
+                         Navigated="webviewNavigated" 
+                         Navigating="webviewNavigating" />
+        </StackLayout>
+
+        <StackLayout BackgroundColor="#aa7a7c80"
+                     x:Name="menuItem"
+                     IsVisible="false">
+            <Label x:Name="lblLogout"
+                   Text="Logout"
+                   Padding="20,10"
+                   HorizontalOptions="EndAndExpand"
+                   VerticalOptions="StartAndExpand"
+                   Margin="35,5"
+                   BackgroundColor="White">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LogoutCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TappedOnBackground"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </Grid>
+
+    
 
 </base:PageBase>

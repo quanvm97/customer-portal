@@ -140,5 +140,30 @@ namespace Demo.Views
 
         #endregion
 
+        #region TappedOnBackground
+
+        private void TappedOnBackground(object sender, EventArgs e)
+        {
+            menuItem.IsVisible = false;
+        }
+
+        #endregion
+
+        #region OnMenuItemClicked
+
+        private async void OnMenuItemClicked(object sender, EventArgs e)
+        {
+            lblLogout.Opacity = 0;
+            menuItem.IsVisible = true;
+
+            await lblLogout.TranslateTo(150, 0, 0, Easing.BounceOut);
+
+            lblLogout.Opacity = 1;
+            await lblLogout.TranslateTo(0, 0, 200);
+
+        }
+
+        #endregion
+
     }
 }
