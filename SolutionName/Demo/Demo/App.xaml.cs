@@ -78,8 +78,8 @@ namespace Demo
 
         private async Task StartApp()
         {
-            await NavigationService.NavigateAsync(new Uri($"{ManagerPage.NavigationHomeUri}/{ManagerPage.NavigationPage}/{ManagerPage.MainPage}"));
-            return;
+            //await NavigationService.NavigateAsync(new Uri($"{ManagerPage.NavigationHomeUri}/{ManagerPage.NavigationPage}/{ManagerPage.MainPage}"));
+            //return;
 
             var session = _sqLiteService.Get<UserModel>(s => !s.Id.Equals(Guid.Empty));
             if (session != null)
