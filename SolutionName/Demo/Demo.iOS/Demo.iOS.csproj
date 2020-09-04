@@ -95,7 +95,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork@1x.png" />
     <ITunesArtwork Include="iTunesArtwork@2x.png" />
-    <ITunesArtwork Include="iTunesArtwork@3x.png" />
     <Compile Include="Services\SQLiteService\DatabaseConnection.cs" />
     <Compile Include="Controls\CustomEntryRenderer.cs" />
     <Compile Include="Controls\CustomButtonRenderer.cs" />
@@ -149,7 +148,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appstore.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h@2x.png" />
@@ -201,6 +199,9 @@
     </PackageReference>
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>2.0.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Connectivity">
+      <Version>3.2.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

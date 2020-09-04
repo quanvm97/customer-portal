@@ -65,6 +65,8 @@ namespace Demo
         protected override async void OnInitialized()
         {
             InitDatabase();
+
+            Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent();
 
             await StartApp();
@@ -76,10 +78,14 @@ namespace Demo
 
         private async Task StartApp()
         {
+            await NavigationService.NavigateAsync(new Uri($"{ManagerPage.NavigationHomeUri}/{ManagerPage.NavigationPage}/{ManagerPage.MainPage}"));
+            return;
+
             var session = _sqLiteService.Get<UserModel>(s => !s.Id.Equals(Guid.Empty));
             if (session != null)
             {
-                await NavigationService.NavigateAsync(ManagerPage.Home());
+                await NavigationService.NavigateAsync(new Uri($"{ManagerPage.NavigationHomeUri}/{ManagerPage.NavigationPage}/{ManagerPage.MainPage}"));
+                //await NavigationService.NavigateAsync(ManagerPage.Home());
             }
             else
             {

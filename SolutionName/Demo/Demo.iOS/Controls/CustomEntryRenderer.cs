@@ -1,11 +1,14 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using CoreAnimation;
+using CoreGraphics;
 using Demo.Controls;
 using Demo.iOS.Controls;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
+using Color = Xamarin.Forms.Color;
 
 [assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
 namespace Demo.iOS.Controls
@@ -50,19 +53,23 @@ namespace Demo.iOS.Controls
 
             #region HasRoundedCorner
 
-            //if (!element.HasRoundedCorner)
-            //{
-            //    this.Control.BorderStyle = UITextBorderStyle.None;
-            //    this.Element.HeightRequest = 30;
-            //    var a = this.Frame.Width;
-            //    CALayer bottomBorder = new CALayer
-            //    {
-            //        Frame = new CGRect(0.0f, element.HeightRequest - 1, a, 1.0f),
-            //        BorderWidth = 2.0f,
-            //        BorderColor = Color.Black.ToCGColor()
-            //    };
-            //    textField.Layer.AddSublayer(bottomBorder);
-            //}
+            if (element.HasRoundedCorner)
+            {
+                //this.Control.BorderStyle = UITextBorderStyle.None;
+                //this.Element.HeightRequest = 30;
+                //var a = this.Frame.Width;
+                //CALayer bottomBorder = new CALayer
+                //{
+                //    Frame = new CGRect(0.0f, element.HeightRequest - 30, this.Control.Frame.Width, 30.0f),
+                //    BorderWidth = 2.0f,
+                //    BorderColor = Color.Black.ToCGColor()
+                //};
+                //textField.Layer.AddSublayer(bottomBorder);
+
+                textField.Layer.BorderColor = element.StrokeColor.ToCGColor();
+                textField.Layer.BorderWidth = element.BorderWidth;
+                textField.Layer.CornerRadius = element.ConnerBorder;
+            }
 
             #endregion
         }

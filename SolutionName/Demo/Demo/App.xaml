@@ -35,6 +35,7 @@
             <Style TargetType="controls:CustomEntry">
                 <Setter Property="FontSize" Value="{StaticResource NormalLabelFont}"/>
                 <Setter Property="TextColor" Value="{StaticResource DimGrayColor}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}"/>
             </Style>
             <Style TargetType="Button">
                 <Setter Property="FontSize" Value="{StaticResource NormalLabelFont}"/>

@@ -39,7 +39,8 @@
                         <Label x:Name="LabelMessageContent"
                                Margin="20,10"
                                TextColor="{StaticResource GrayColor}"
-                               HorizontalOptions="CenterAndExpand"/>
+                               HorizontalOptions="CenterAndExpand"
+                               HorizontalTextAlignment="Center"/>
                     </ScrollView>
 
                     <StackLayout Grid.Row="2"

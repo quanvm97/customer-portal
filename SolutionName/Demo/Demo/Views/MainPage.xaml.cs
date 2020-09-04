@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Demo.Extensions;
 using Demo.Views.Base;
+using Demo.Views.Popups;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 
 namespace Demo.Views
@@ -12,6 +16,8 @@ namespace Demo.Views
             InitializeComponent();
         }
 
+        #region OnAppearing
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -19,10 +25,35 @@ namespace Demo.Views
             await progress.ProgressTo(0.9, 900, Easing.SpringIn);
         }
 
-        private bool _isCancel = false;
+        #endregion
 
-        private void webviewNavigating(object sender, WebNavigatingEventArgs e)
+        #region Properties
+
+        private bool _isCancel = false;
+        private readonly string ic_reload = "ic_reload";
+        private readonly string ic_cancel = "ic_cancel";
+
+        #endregion
+
+        #region webviewNavigating
+
+        private async void webviewNavigating(object sender, WebNavigatingEventArgs e)
         {
+            //If on iOS or none were returned
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                //You are offline, notify the user
+
+                e.Cancel = true;
+
+                progress.IsVisible = false;
+
+                enUrl.Image = ic_reload;
+
+                await MessagePopup.Instance.Show(message: "Please check on the internet connection and try again");
+                return;
+            }
+
             if (e.Url.ToLower().StartsWith("https://apps.mypurecloud.ie/webchat/storage/"))
             {
                 // except case
@@ -36,20 +67,28 @@ namespace Demo.Views
                 e.Cancel = _isCancel;
 
                 progress.IsVisible = !_isCancel;
-                enUrl.Image = progress.IsVisible ? "ic_cancel" : "ic_reload";
+                enUrl.Image = progress.IsVisible ? ic_cancel : ic_reload;
                 _isCancel = false;
             }
-            
+
         }
+
+        #endregion
+
+        #region webviewNavigated
 
         private void webviewNavigated(object sender, WebNavigatedEventArgs e)
         {
             UpdateBackAndForwardButton();
             _isCancel = false;
-            enUrl.Image = "ic_reload";
+            enUrl.Image = ic_reload;
 
             progress.IsVisible = false;
         }
+
+        #endregion
+
+        #region OnBackButtonClicked
 
         private void OnBackButtonClicked(object sender, EventArgs e)
         {
@@ -61,6 +100,10 @@ namespace Demo.Views
 
         }
 
+        #endregion
+
+        #region OnForwardButtonClicked
+
         private void OnForwardButtonClicked(object sender, EventArgs e)
         {
             UpdateBackAndForwardButton();
@@ -69,6 +112,10 @@ namespace Demo.Views
                 webView.GoForward();
             }
         }
+
+        #endregion
+
+        #region UpdateBackAndForwardButton
 
         private void UpdateBackAndForwardButton()
         {
@@ -79,13 +126,19 @@ namespace Demo.Views
             btnForward.Opacity = webView.CanGoForward ? 1 : 0.5;
         }
 
+        #endregion
+
+        #region OnReloadButtonClicked
+
         private void OnReloadButtonClicked(object sender, EventArgs e)
         {
-            if (enUrl.Image == "ic_cancel")
+            if (enUrl.Image == ic_cancel)
                 _isCancel = true;
+
             webView.Reload();
         }
 
+        #endregion
 
     }
 }

@@ -29,6 +29,7 @@ namespace Demo.Views.Base
             On<iOS>().SetLargeTitleDisplay(LargeTitleDisplayMode.Never);
             NavigationPage.SetHasNavigationBar(this, false);
             ViewModelLocator.SetAutowireViewModel(this, true);
+            BackgroundColor = Color.White;
         }
 
         #endregion

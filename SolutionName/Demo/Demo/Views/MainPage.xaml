@@ -52,7 +52,6 @@
                                   ConnerBorder="10"
                                   BorderWidth="1"
                                   StrokeColor="DimGray"
-                                  Image="ic_reload"
                                   ImageAlignment="Right"
                                   Opacity="0.8"
                                   InputTransparent="True">
