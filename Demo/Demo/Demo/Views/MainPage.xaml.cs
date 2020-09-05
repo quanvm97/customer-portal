@@ -165,5 +165,20 @@ namespace Demo.Views
 
         #endregion
 
+        #region OnBackButtonPress
+
+        protected override bool OnBackButtonPressed()
+        {
+            UpdateBackAndForwardButton();
+            if (webView.CanGoBack)
+            {
+                webView.GoBack();
+                return true;
+            }
+            return false;
+        }
+
+        #endregion
+
     }
 }

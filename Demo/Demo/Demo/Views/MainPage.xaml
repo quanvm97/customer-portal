@@ -12,7 +12,8 @@
                      Padding="0"
                      Spacing="0">
             <Grid Padding="10,5"
-                  BackgroundColor="#DCDCDC">
+                  BackgroundColor="#DCDCDC"
+                  HeightRequest="50">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
