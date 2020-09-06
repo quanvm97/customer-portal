@@ -20,16 +20,9 @@ namespace Demo.ViewModels.Base
     {
         #region Properties Services
 
-        //protected INavigationService NavigationService { get; private set; }
         public INavigationService Navigation { get; private set; }
         public IPageDialogService DialogService { get; private set; }
-        //public IHttpRequest HttpRequest { get; private set; }
         public ISqLiteService SqLiteService { get; private set; }
-        //public IFileService FileService { get; private set; }
-        //public IAppInfo AppInfo { get; private set; }
-        //public IExcelFileService ExcelFileService { get; private set; }
-
-        //protected FirebaseDatabaseHelper FirebaseHelper { get; private set; }
 
         #endregion
 
@@ -46,23 +39,14 @@ namespace Demo.ViewModels.Base
 
         #region Constructor
 
-        public ViewModelBase(INavigationService navigationService = null, IPageDialogService dialogService = null, ISqLiteService sqliteService = null/*,
-            IHttpRequest httpRequest = null, IAppInfo appInfo = null,
-            IFileService fileService = null, IExcelFileService excelFileService = null*/)
+        public ViewModelBase(INavigationService navigationService = null, IPageDialogService dialogService = null, ISqLiteService sqliteService = null)
         {
-            //PageTitle = TranslateExtension.Get("FairflexxFotoScan");
             if (navigationService != null) Navigation = navigationService;
             if (dialogService != null) DialogService = dialogService;
-            //if (httpRequest != null) HttpRequest = httpRequest;
             if (sqliteService != null) SqLiteService = sqliteService;
-            //if (fileService != null) FileService = fileService;
-            //if (appInfo != null) AppInfo = appInfo;
-            //if (excelFileService != null) ExcelFileService = excelFileService;
-            //FirebaseHelper = new FirebaseDatabaseHelper();
 
             BackCommand = new DelegateCommand(async () => await BackExecute());
             BackToRootCommand = new DelegateCommand(async () => await BackToRootExecute());
-            //ZoomImageCommand = new DelegateCommand<object>(ZoomImageExe);
         }
 
         #endregion
@@ -239,32 +223,6 @@ namespace Demo.ViewModels.Base
         /// called when page need override soft back button
         /// </summary>
         public virtual void OnSoftBackButtonPressed() { }
-
-        #endregion
-
-        #region Zoom
-
-        public ICommand ZoomImageCommand { get; }
-        protected virtual void ZoomImageExe(object obj)
-        {
-
-        }
-
-        #endregion
-
-        #region AddHeaderToken
-
-        public void AddHeaderToken(string token)
-        {
-            //var checkHeader = HttpRequest.DefaultRequestHeaders.Authorization;
-
-            //if (checkHeader != null)
-            //{
-            //    HttpRequest.DefaultRequestHeaders.Remove("Authorization");
-            //}
-
-            //HttpRequest.DefaultRequestHeaders.Add("Authorization", token);
-        }
 
         #endregion
 

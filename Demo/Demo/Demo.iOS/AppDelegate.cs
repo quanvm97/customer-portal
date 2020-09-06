@@ -36,9 +36,7 @@ namespace Demo.iOS
             Rg.Plugins.Popup.Popup.Init();
 
             Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "SwipeView_Experimental", "IndicatorView_Experimental" });
-            //CarouselViewRenderer.Init();
             InitScreen();
-            //InitCachedImage();
 
             global::Xamarin.Forms.Forms.Init();
         }
@@ -48,39 +46,6 @@ namespace Demo.iOS
             App.ScreenWidth = UIScreen.MainScreen.Bounds.Width;
             App.ScreenHeight = UIScreen.MainScreen.Bounds.Height;
         }
-
-        private void InitCachedImage()
-        {
-            //CachedImageRenderer.Init();
-
-            //var config = new FFImageLoading.Config.Configuration()
-            //{
-            //    VerboseLogging = false,
-            //    VerbosePerformanceLogging = false,
-            //    VerboseMemoryCacheLogging = false,
-            //    VerboseLoadingCancelledLogging = false,
-            //    Logger = new CustomLogger(),
-            //};
-            //ImageService.Instance.Initialize(config);
-        }
-
-        //public class CustomLogger : FFImageLoading.Helpers.IMiniLogger
-        //{
-        //    public void Debug(string message)
-        //    {
-        //        Console.WriteLine(message);
-        //    }
-
-        //    public void Error(string errorMessage)
-        //    {
-        //        Console.WriteLine(errorMessage);
-        //    }
-
-        //    public void Error(string errorMessage, Exception ex)
-        //    {
-        //        Error(errorMessage + System.Environment.NewLine + ex.ToString());
-        //    }
-        //}
 
         #endregion
     }

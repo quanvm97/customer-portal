@@ -84,8 +84,7 @@ namespace Demo
             var session = _sqLiteService.Get<UserModel>(s => !s.Id.Equals(Guid.Empty));
             if (session != null)
             {
-                await NavigationService.NavigateAsync(new Uri($"{ManagerPage.NavigationHomeUri}/{ManagerPage.NavigationPage}/{ManagerPage.MainPage}"));
-                //await NavigationService.NavigateAsync(ManagerPage.Home());
+                await NavigationService.NavigateAsync(ManagerPage.Home());
             }
             else
             {

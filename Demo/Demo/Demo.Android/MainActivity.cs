@@ -37,8 +37,6 @@ namespace Demo.Droid
             RequestPermission();
 #pragma warning restore CS0612 // Type or member is obsolete
             Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "SwipeView_Experimental", "IndicatorView_Experimental" });
-            //CarouselViewRenderer.Init();
-            //CachedImageRenderer.Init(true);
             Rg.Plugins.Popup.Popup.Init(this, bundle);
 
             InitScreen();
@@ -67,6 +65,7 @@ namespace Demo.Droid
         #endregion
 
         #region Permissions
+
         /// <summary>
         /// Permission request
         /// </summary>

@@ -78,7 +78,7 @@ namespace Demo.ViewModels
                     // Navigate to Home page
                     await DeviceExtension.BeginInvokeOnMainThreadAsync(async () =>
                     {
-                        await Navigation.NavigateAsync(new Uri($"{ManagerPage.NavigationHomeUri}/{ManagerPage.MainPage}"));
+                        await Navigation.NavigateAsync(ManagerPage.Home());
                     });
                 });
 
